@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Exchange</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="collapse bg-dark" id="navbarHeader">
+       <!-- <script>
+            document.getElememtById('oDiv').style.display = 'none';
+        </script>-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 py-4">
+                    <h4 class="text-white">About</h4>
+                    <p class="text-muted">This website is developed by Senwen Zheng and Qingyang Feng.</p>
+                    <p class="text-muted">University of Bristol.</p>
+                </div>
+                <div class="col-sm-4 py-4">
+                    <h4 class="text-white">Contact</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white ">Email us</a></li>
+                        <li><a href="#" class="text-white">sz16061@my.bristol.ac.uk</a></li>
+                        <li><a href="#" class="text-white">qf17615@my.bristol.ac.uk</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark">
+        <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand">Exchange</a>
+            <ul class="nav navbar navbar-right">
+                <li class="nav-item"><a class="nav-link text-white" href="home.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="information.html">Information</a></li>
+            </ul>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Exchange</h1>
+            <p class="lead text-muted">Exchange is an exchange platform where users can trade everything with others! </p>
+            <p>
+                <button class="btn btn-primary" onclick="display1()">Sign in</button>
+                <button class="btn btn-secondary" onclick="display2()">Sign up</button>
+            </p>
+        </div>
+    </section>
+
+
+
+    <section class="text-center" style="padding-top:2rem">
+        <div class="container">
+            <p>
+                <button id="previous" class="btn btn-secondary" onclick="previous()">Previous</button>
+                <button id="next" class="btn btn-primary" onclick="alert('Please login in first')">Next</button>
+            </p>
+        </div>
+    </section>
+
+    <footer class="text-muted">
+        <div class="container">
+            <p class="float-right">
+                <a href="#">Back to top</a>
+            </p>
+        </div>
+    </footer>
+
+    <div class="container ">
+            <h1 class="jumpbotron-heading">Warning</h1>
+            <p  class="lead text-muted">For your personal safety, we strongly recommend our users not trading in remote locations or late at nitgh!</p>
+
+    </div>
+    <hr>
+    <p><font size="1">© 2018 UoB.
+        <span class="text-muted">- Made in Bristol, United kindom  </span></font>
+    </p>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script src="../public/js/vendor/popper.min.js"></script>
+<script src="../public/js/vendor/holder.min.js"></script>
+<script src="../public/js/index.js"></script>
+<script src="../public/js/module/jquery.js"></script>
+<script src="../public/js/module/json.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+
+<script>
+    function display1(){
+        if(document.getElementById('oDiv').style.display=='none'){
+            document.getElementById('mask').style.display='block';
+            document.getElementById('oDiv').style.display='block';
+        }
+    }
+</script>
+
+<script>
+    function display2(){
+        if(document.getElementById('oDiv1').style.display=='none'){
+            document.getElementById('mask').style.display='block';
+            document.getElementById('oDiv1').style.display='block';
+        }
+    }
+</script>
+
+<div class="mask" id="mask" ></div>
+<div class='opendiv' id="oDiv" data-bind="visible: isSignin"  >
+    <script>
+        document.getElementById("oDiv").style.marginTop="-155px";
+        document.getElementById("oDiv").style.height="280px";
+    </script>
+
+    <form>
+        <div class="title">
+            <b> <font size="8"> Welcome </font> </b>
+        </div>
+        <div class="form-group">
+            <input data-bind="value: email" name="email" type="email" class="form-control" id="email" placeholder="Your email address">
+        </div>
+        <div class="form-group">
+            <input data-bind="value: password" name="password" type="password" class="form-control" id="password" placeholder="Create a password">
+        </div>
+        <div class="sign-invalid" data-bind="text:signinErrorMsg"></div>
+        <div class="row">
+            <div class="col-sm-3" style="margin-left: 2px">
+                <button type="button" data-bind="click: submitSignin" class="btn btn-success">Sign in</button>
+            </div>
+            <div class="col-sm-5 sign-switch">
+                <p> No account? <a data-bind="click:switchSign">Sign up</a ></p >
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class='opendiv' id="oDiv1" data-bind="visible: isSignup" >
+    <form>
+        <div class="title">
+            <b> <font size="8"> Registration </font> </b>
+        </div>
+        <div class="form-group">
+            <input data-bind="value: username, valueUpdate: 'afterkeydown'" name="username" type="text" class="form-control" id="username" placeholder="Pick a username">
+        </div>
+        <div class="form-group">
+            <input data-bind="value: email, valueUpdate: 'afterkeydown'" name="email" type="email" class="form-control" id="email" placeholder="Your email address">
+        </div>
+        <div class="form-group">
+            <input data-bind="value: password, valueUpdate: 'afterkeydown'" name="password" type="password" class="form-control" id="password" placeholder="Create a password">
+        </div>
+        <div class="sign-invalid" data-bind="text:signupErrorMsg"></div>
+        <div class="row">
+            <div class="col-xs-5">
+                <button type="button" class="btn btn-success" data-bind="click: submitSignup">Sign up</button>
+            </div>
+            <div class="col-xs-7 sign-switch">
+                <p> Have an account? <a data-bind="click: switchSign">Sign in</a ></p >
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

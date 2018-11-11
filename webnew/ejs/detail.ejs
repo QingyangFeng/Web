@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <%- include head.ejs %>
+    <body>
+        <%- include nav.ejs %>
+        <div class="Information-text">
+                <div class="width">
+                        <div class="Information-text-title"><%= data.title %></div>
+                        <div class="Information-text-photo">
+                            <div class="Information-text-photo-img"></div>
+                        </div>
+                        <div class="Information-text-body">
+                            <div class="col-sm-6 info-detail-left">
+                                <p>location: <%= data.location %></p>
+                                <p>found date: <%= data.postdate %></p>
+                                <p>description: <%= data.description %></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <% if(data.signin==true){ %>
+                        <div class="Information-text-thisYouComments">
+                            <form>
+                                <span>Comments</span>
+                                <div class="form-group" style="display:none">
+                                    <input id="comment-rid" class="form-control" value="<%= data.reportid %>">
+                                </div>
+                                <textarea placeholder="write down your comments" data-bind="value:commentContent"></textarea>
+                                <button id="submitComment" data-bind="click:submitComment" type="button">Submit Comments</button>
+                            </form>
+                        </div>
+                        <% } %>
+                
+                        <div class="Information-text-Comments">
+                            <h1>Comments</h1>
+                            <% for (let i of comments ){ %>
+                            <div class="Information-text-Comments-info">
+                                <div class="Comments-info-userData">
+                                    <span class="Comments-info-userData-name"><%= i.username %></span>
+                                    <span class="Comments-info-userData-time"><%= i.time %></span>
+                                </div>
+                                <p><%= i.content %></p>
+                            </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>    
+    </body>
+    <script src="/js/detail.js"></script>
+
+</html>

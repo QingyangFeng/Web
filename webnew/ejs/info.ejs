@@ -1,0 +1,30 @@
+<div class="upinfo"  style="margin-top: 10px">
+    <section class="jumbotron text-center">
+        <h1 data="upload">Recently Information</h1>
+        <p class="lead text-muted">Checking more detail by click photo!</p>
+        <div class="container" style="margin-top: 20px">
+            <% if (data.signin == true) { %>
+            <a  class="btn btn-primary" href="/newEvent">Upload</a>
+            <% } else { %>
+            <a  class="btn btn-secondary" href="javascript:alert('Please Signin first');">Upload</a>
+            <% } %>
+        </div>
+    </section>
+
+     <div class="width text-center">
+        <div class="information-page">
+            <div data-bind='foreach: data'>
+                <a data-bind="attr: { href: '/information/report/'+reportid }">
+                    <div class="info-box">
+                        <div class="info-box-image">
+                            <img data-bind="attr: {src: image}" />
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <a class="btn btn-secondary text-mute " style="margin-top:20px" href="#">Back to top</a>
+     </div>
+</div>
+    <script src="/js/information.js"></script>

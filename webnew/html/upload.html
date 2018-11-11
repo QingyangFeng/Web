@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Upload</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/css/sign.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<header>
+    <div class="collapse bg-dark" id="navbarHeader">
+        <!-- <script>
+             document.getElememtById('oDiv').style.display = 'none';
+         </script>-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 py-4">
+                    <h4 class="text-white">About</h4>
+                    <p class="text-muted">This website is developed by Senwen Zheng and Qingyang Feng.</p>
+                    <p class="text-muted">University of Bristol.</p>
+                </div>
+                <div class="col-sm-4 py-4">
+                    <h4 class="text-white">Contact</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white ">Email us</a></li>
+                        <li><a href="#" class="text-white">sz16061@my.bristol.ac.uk</a></li>
+                        <li><a href="#" class="text-white">qf17615@my.bristol.ac.uk</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark">
+        <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand">Exchange</a>
+            <ul class="nav navbar navbar-right">
+                <li class="nav-item"><a class="nav-link text-white" href="/home">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="/information">Information</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="/index">Log out</a></li>
+            </ul>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+<body>
+<section>
+    <div class="upinfo">
+        <div class="upinfo-body-title" data="upload">Upload a new exchange information</div>
+        <div class="report-box row">
+            <div class="col-md-6 report-left upinfo-body-upimg">
+                <form id="upinfo-body-upimg-form" enctype="multipart/form-data" method="post" action="/upImage">
+                    <input type="file" id="upinfo-body-upimg " name="file">
+                </form >
+                <h1>Drag Image Here</h1>
+                <i class="fa fa-file-image-o fa-5x"></i>
+            </div>
+            <div class="col-md-6 report-right">
+                <form>
+                    <div class="form-group">
+                        <!--<label>title</label>-->
+                        <input data-bind="value: title" class="form-control" placeholder="Title">
+                    </div>
+                    <div class="form-group">
+                        <!--<label>location</label>-->
+                        <input data-bind="value: location" class="form-control" placeholder="Location">
+                    </div>
+                    <div class="form-group">
+                        <!--<label>date</label>-->
+                        <input data-bind="value: eventDate" class="form-control" placeholder="Found Date">
+                    </div>
+                    <div class="form-group">
+                        <!--<label>Breed</label>-->
+                        <input data-bind="value: species" class="form-control" placeholder="Breed">
+                    </div>
+                    <div class="form-group">
+                        <!--<label>Description</label>-->
+                        <textarea data-bind="value: description" class="form-control" placeholder="Description"></textarea>
+                    </div>
+                </form>
+
+                <!--<textarea placeholder="You want to say"></textarea>-->
+            </div>
+        </div>
+    </div>
+    <div class="upinfo-emit " ><center>
+        <button class="btn btn-primary" data-bind="click:submitFound">Submit</button>
+    </center>
+    </div>
+</section>
+
+<hr>
+<p><font size="1">© 2018 UoB.
+    <span class="text-muted">- Made in Bristol, United kindom  </span></font>
+</p>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script src="/public/js/vendor/popper.min.js"></script>
+<script src="/public/js/vendor/holder.min.js"></script>
+<script src="/public/js/information.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+</html>

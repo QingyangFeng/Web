@@ -1,0 +1,31 @@
+<div class="backg" id="bac"> </div>
+<div class="backg" id="bac1"> </div>
+
+<script>
+    var mydiv = document.getElementById('bac');
+    var imgArray = ['b_1.png', 'b_2.png','b_3.png'];
+    var num = 1;
+    var num1 = 2;
+
+    setInterval(function () {
+        mydiv.style.backgroundImage = 'url(/img/' + imgArray[num] + ')';
+        var i = Math.random()*75+10;
+        var j = Math.random()*75+10;
+        mydiv.style.left= i.toString()+'%';
+        mydiv.style.top= j.toString()+'%';
+        num++;
+        num %= imgArray.length;
+    }, 3000);
+
+    var mydiv1 = document.getElementById('bac1');
+
+    setInterval(function () {
+        mydiv1.style.backgroundImage = 'url(/img/' + imgArray[num1] + ')';
+        var i = Math.random()*75+10;
+        var j = Math.random()*75+10;
+        mydiv1.style.left= i.toString()+'%';
+        mydiv1.style.top= j.toString()+'%';
+        num1++;
+        num1 %= imgArray.length;
+    }, 2500);
+</script>

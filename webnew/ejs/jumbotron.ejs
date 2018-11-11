@@ -1,0 +1,33 @@
+<section class="jumbotron text-center">
+    <div class="container">
+         <% if (data.signin == true) { %>
+            <h1 class="jumbotron-heading">Exchange</h1>
+            <p class="lead text-muted">Welcome back <%-data.username%>!</p>
+        <% } else if(data.signin != false) { %>
+            <h1 class="jumbotron-heading">Exchange</h1>
+            <p class="lead text-muted">Exchange is an exchange platform where users can trade everything with others! </p>
+            <p>
+                <button class="btn btn-primary" onclick="display1()">Sign in</button>
+                <button class="btn btn-secondary" onclick="display2()">Sign up</button>
+            </p>
+        <% } %>
+    </div>
+</section>
+<script>
+    function display1(){
+           document.getElementById('oDiv1').style.display='none';
+           document.getElementById('mask').style.display='block';
+           document.getElementById('oDiv').style.display='block';
+    }
+    function display2(){
+            document.getElementById('oDiv').style.display='none';
+            document.getElementById('mask').style.display='block';
+            document.getElementById('oDiv1').style.display='block';
+    }   
+</script>
+<% include signin.ejs %>
+<% include signup.ejs %>
+    
+
+    
+    

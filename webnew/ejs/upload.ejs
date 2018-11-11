@@ -1,0 +1,42 @@
+<div class="upinfo">
+    <section class="jumbotron text-center">
+        <h1 data="upload">Upload a new exchange information</h1>
+    </section>
+    <div class="report-box row" style="margin-left: 60px; margin-right: 60px;">
+        <div class="col-md-6 report-left upinfo-body-upimg">
+                <form id="upinfo-body-upimg-form" enctype="multipart/form-data" method="post" action="/upImage">
+                    <input type="file" id="upinfo-body-upimg" name="file">
+                </form >
+                <div class="newcol" id="movediv">
+                  <h1>Drag Image Here</h1>
+                  <i class="fa fa-file-image-o fa-5x"></i>
+                </div>
+            </div>
+            <div class="col-md-6 report-right">
+                <form>
+                    <div class="form-group">
+                        <!--<label>title</label>-->
+                        <input data-bind="value: title" class="form-control" placeholder="Title">
+                    </div>
+                    <div class="form-group">
+                        <!--<label>location</label>-->
+                        <input data-bind="value: location" class="form-control" placeholder="Location">
+                    </div>
+                    <div class="form-group">
+                        <!--<label>date</label>-->
+                        <input data-bind="value: postdate" class="form-control" placeholder="postdate">
+                    </div>
+                    <div class="form-group">
+                        <!--<label>Description</label>-->
+                        <textarea data-bind="value: description" class="form-control" placeholder="Description"></textarea>
+                    </div>
+                </form>
+
+                <div class="upinfo-emit" ><center>
+                    <button class="btn btn-primary" data-bind="click:submitEvent">Submit</button>
+                </center>
+            </div>
+    </div>
+</div>
+</div>
+</div>

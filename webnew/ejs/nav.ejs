@@ -1,0 +1,45 @@
+<header>
+    <div class="collapse bg-dark" id="navbarHeader">
+       <!-- <script>
+            document.getElememtById('oDiv').style.display = 'none';
+        </script>-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 py-4">
+                    <h4 class="text-white">About</h4>
+                    <p class="text-muted">This website is developed by Senwen Zheng and Qingyang Feng.</p>
+                    <p class="text-muted">University of Bristol.</p>
+                </div>
+                <div class="col-sm-4 py-4">
+                    <h4 class="text-white">Contact</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white ">Email us</a></li>
+                        <li><a href="#" class="text-white">sz16061@my.bristol.ac.uk</a></li>
+                        <li><a href="#" class="text-white">qf17615@my.bristol.ac.uk</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark row" style="width: 101%;">
+        <div class="bar_logo" style="margin-left: 5%;"> </div>
+
+        <div class="container d-flex justify-content-between" style="width:100%; margin-right: 10px;">
+            <a href="#" class="nav-link text-white" style="margin-left: 0px; font-size: 30px">Exchange</a>
+            <ul class="nav navbar navbar-right">
+                <% if (data.signin == true) { %>
+                    <li class="nav-item"><a class="nav-link text-white" href="/home">Home</a></li>
+                <% } else { %> 
+                    <li class="nav-item"><a class="nav-link text-white" href="/">Home</a></li>
+                <% } %>
+                <li class="nav-item"><a class="nav-link text-white" href="/information">Information</a></li>
+                <% if (data.signin == true) { %>
+                    <li><a href="/logout" class="nav-link text-white" style="text-decoration:underline">Log out</a></li>
+                <% } %>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </ul>
+        </div>
+    </div>
+</header>
